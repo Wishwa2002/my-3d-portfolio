@@ -1,28 +1,38 @@
 import React from "react";
-import {counterItems} from '../constants/index.js'
-import CountUp from "react-countup";
+import CountUpImport from "react-countup";
+import { counterItems } from "../constants/index.js";
+
+const CountUp = CountUpImport?.default ?? CountUpImport;
 
 const AnimatedCounter = () => {
   return (
-    <div id="counter" className="padding-x-lg xl:mt-0 mt-32">
-      <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section id="counter" className="padding-x-lg mt-32 xl:mt-0">
+      <div className="mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {counterItems.map((item) => (
           <div
             key={item.label}
-            className="bg-zinc-900 rounded-lg p-10 flex flex-col justify-center items-center"
+            className="flex flex-col items-center justify-center rounded-lg bg-zinc-900 p-10"
           >
-            <div className="counter-number text-white text-5xl font-bold mb-2">
-              {item.value}
-              {item.suffix}
+            <div className="counter-number mb-2 text-5xl font-bold text-white">
+              <CountUp
+                start={0}
+                end={Number(item.value)}
+                duration={2.5}
+                delay={0}
+                suffix={item.suffix ?? ""}
+                separator=","
+              >
+                {({ countUpRef }) => <span ref={countUpRef} />}
+              </CountUp>
             </div>
 
-            <div className="text-zinc-400 text-lg text-center">
+            <p className="text-center text-lg text-zinc-400">
               {item.label}
-            </div>
+            </p>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
