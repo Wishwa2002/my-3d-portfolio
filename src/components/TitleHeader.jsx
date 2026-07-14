@@ -1,4 +1,5 @@
 import React from 'react'
+import {expCards} from "../constants/index.js"
 
 const TitleHeader = ({title,sub}) => {
   return (
@@ -6,6 +7,11 @@ const TitleHeader = ({title,sub}) => {
         <div className='hero-badge'>
             <p>{sub}</p>
         </div>
+        <div className='font-semibold md:text-3xl text-center'>
+            {title}
+
+        </div>
+        
     </div>
   )
 }
