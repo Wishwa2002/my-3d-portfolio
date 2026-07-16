@@ -265,6 +265,25 @@ const socialImgs = [
     imgPath: "/images/linkedin.png",
   },
 ];
+  const services = [
+  {
+    title: "Web Developer",
+    icon: "/images/web.png",
+  },
+  {
+    title: "React Native Developer",
+    icon: "/images/mobile.png",
+  },
+  {
+    title: "Backend Developer",
+    icon: "/images/backend.png",
+  },
+  {
+    title: "Content Creator",
+    icon: "/images/creator.png",
+  },
+];
+
 
 export {
   words,
@@ -278,4 +297,5 @@ export {
   techStackIcons,
   techStackImgs,
   navLinks,
+  services
 };
