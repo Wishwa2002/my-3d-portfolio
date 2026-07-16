@@ -23,6 +23,7 @@ const Services = () => {
           />
         ))}
       </div>
+      <div className="mb-20"/>
     </section>
   );
 };

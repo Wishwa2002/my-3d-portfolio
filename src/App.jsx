@@ -5,6 +5,8 @@ import LogoSection from "./sections/LogoSection"
 import FeatureCards from "./sections/FeatureCards"
 import ExperienceSection from "./sections/ExperienceSection"
 import Services from "./sections/Services";
+import Contact from "./sections/Contact"
+import { StarsCanvas } from "./components/canvas"
 const App = () => {
   return (
     <>
@@ -15,6 +17,12 @@ const App = () => {
       <FeatureCards/>
       <ExperienceSection/>
       <Services/>
+      <div className="relative z-0">
+        <Contact/>
+        <StarsCanvas/>
+      </div>
+      
+      
     </>
   )
 }
